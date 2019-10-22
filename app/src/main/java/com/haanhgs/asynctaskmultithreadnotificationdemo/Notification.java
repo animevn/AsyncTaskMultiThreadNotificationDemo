@@ -53,12 +53,12 @@ public class Notification {
         return  builder;
     }
 
-    public static void createNotification(String string){
+    public static void createNotification(String string, int id){
         NotificationManager manager = (NotificationManager)
                 MyApplication.context().getSystemService(Context.NOTIFICATION_SERVICE);
         createChannel();
         if (!MyApplication.isAppVisible() && manager != null){
-            manager.notify(1, createBuilder(string).build());
+            manager.notify(id, createBuilder(string).build());
         }
     }
 }

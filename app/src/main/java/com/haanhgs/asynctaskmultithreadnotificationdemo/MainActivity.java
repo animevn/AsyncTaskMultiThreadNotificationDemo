@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 String string = "The prime number " + input + " is " + number + "\n"
                         + "Calculated in " + time + " milisecs";
                 updateViewsOnFinishTask(bn, et, tv, string);
-                Notification.createNotification(string);
+                Notification.createNotification(string, number);
             }
         });
         runTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, input);
