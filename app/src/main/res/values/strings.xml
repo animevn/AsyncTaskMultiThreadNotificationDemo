@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Prime numbers in threads</string>
+    <string name="bnCalculate">Calculate</string>
+    <string name="tvResult1">Waiting for result</string>
 </resources>
