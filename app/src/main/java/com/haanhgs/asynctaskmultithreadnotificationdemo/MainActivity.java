@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTaskFinished(int number) {
                 long time = System.currentTimeMillis() - start;
-                String string = "The prime number " + input + " is " + number + "\n"
+                String string = "The prime number " + input + "th is " + number + "\n"
                         + "Calculated in " + time + " milisecs";
                 updateViewsOnFinishTask(bn, et, tv, string);
                 Notification.createNotification(string, number);
@@ -91,11 +91,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Repo.isNumber(et.getText().toString())){
                     runTask(v, bn, et, tv);
+                }else {
+                    tv.setText(R.string.rules);
                 }
             }
         });
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

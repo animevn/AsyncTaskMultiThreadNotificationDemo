@@ -2,4 +2,5 @@
     <string name="app_name">Prime numbers in threads</string>
     <string name="bnCalculate">Calculate</string>
     <string name="tvResult">Waiting for result</string>
+    <string name="rules">Please enter a positive number</string>
 </resources>
