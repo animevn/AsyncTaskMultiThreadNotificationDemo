@@ -48,64 +48,53 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void prepareViewsOnStartTask(Button bn, EditText et, TextView tv){
+        bn.setEnabled(false);
+        et.setEnabled(false);
+        tv.setText(R.string.tvResult);
+    }
+
+    private void updateViewsOnFinishTask(Button bn, EditText et, TextView tv, String string){
+        bn.setEnabled(true);
+        et.setEnabled(true);
+        tv.setText(string);
+    }
+
     private void runTask(View view, final Button bn, final EditText et, final TextView tv){
         final int input = Integer.parseInt(et.getText().toString());
         hideKeyboard(view);
+
         RunTask runTask = new RunTask(new TaskObserver() {
             private long start;
+
             @Override
             public void onTaskStart() {
-                bn.setEnabled(false);
-                et.setEnabled(false);
-                tv.setText(R.string.tvResult);
+                prepareViewsOnStartTask(bn, et, tv);
                 start = System.currentTimeMillis();
             }
 
             @Override
             public void onTaskFinished(int number) {
-                bn.setEnabled(true);
-                et.setEnabled(true);
                 long time = System.currentTimeMillis() - start;
                 String string = "The prime number " + input + " is " + number + "\n"
                         + "Calculated in " + time + " milisecs";
-                tv.setText(string);
+                updateViewsOnFinishTask(bn, et, tv, string);
             }
         });
         runTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, input);
     }
 
-    private void handleThread1(){
-        bnCal1.setOnClickListener(new View.OnClickListener() {
+    private void handleThread(final Button bn, final EditText et, final TextView tv){
+        bn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Repo.isNumber(etInput1.getText().toString())){
-                    runTask(v, bnCal1, etInput1, tvResult1);
+                if (Repo.isNumber(et.getText().toString())){
+                    runTask(v, bn, et, tv);
                 }
             }
         });
     }
 
-    private void handleThread2(){
-        bnCal2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Repo.isNumber(etInput2.getText().toString())){
-                    runTask(v, bnCal2, etInput2, tvResult2);
-                }
-            }
-        });
-    }
-
-    private void handleThread3(){
-        bnCal3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Repo.isNumber(etInput3.getText().toString())){
-                    runTask(v, bnCal3, etInput3, tvResult3);
-                }
-            }
-        });
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
 
         forcePortraitMode();
         initViews();
-        handleThread1();
-        handleThread2();
-        handleThread3();
+        handleThread(bnCal1, etInput1, tvResult1);
+        handleThread(bnCal2, etInput2, tvResult2);
+        handleThread(bnCal3, etInput3, tvResult3);
 
     }
 
