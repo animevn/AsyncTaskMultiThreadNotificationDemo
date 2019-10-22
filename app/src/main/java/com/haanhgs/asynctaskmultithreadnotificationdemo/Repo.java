@@ -41,7 +41,4 @@ public class Repo {
         }
         return prime;
     }
-
-
-
 }
