@@ -6,6 +6,7 @@
     <dist:module dist:instant="true" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
