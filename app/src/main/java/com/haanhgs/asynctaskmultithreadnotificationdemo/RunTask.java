@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 
 public class RunTask extends AsyncTask<Integer,Void, Integer> {
 
-    private TaskObserver listener;
+    private final TaskObserver listener;
 
     public RunTask(TaskObserver listener){
         this.listener = listener;
