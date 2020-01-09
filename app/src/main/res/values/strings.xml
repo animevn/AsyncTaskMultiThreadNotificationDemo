@@ -3,4 +3,6 @@
     <string name="bnCalculate">Calculate</string>
     <string name="tvResult">Waiting for result</string>
     <string name="rules">Please enter a positive number</string>
+    <string name="waiting_result">waiting ..</string>
+    <string name="number_invalid">must be natural number</string>
 </resources>

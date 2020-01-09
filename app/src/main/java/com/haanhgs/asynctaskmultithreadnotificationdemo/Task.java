@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 public class Task extends AsyncTask<Integer, Void, Integer> {
 
     private TaskObserver listner;
+    private long start;
 
     public void setListner(TaskObserver listner) {
         this.listner = listner;
@@ -14,6 +15,7 @@ public class Task extends AsyncTask<Integer, Void, Integer> {
     protected void onPreExecute() {
         super.onPreExecute();
         listner.onPreTask();
+        start = System.currentTimeMillis();
     }
 
     @Override
@@ -24,6 +26,7 @@ public class Task extends AsyncTask<Integer, Void, Integer> {
     @Override
     protected void onPostExecute(Integer integer) {
         super.onPostExecute(integer);
-        listner.onPostTask(integer);
+        long time = System.currentTimeMillis() - start;
+        listner.onPostTask(integer, time);
     }
 }
