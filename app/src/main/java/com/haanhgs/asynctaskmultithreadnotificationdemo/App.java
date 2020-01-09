@@ -4,17 +4,17 @@ import android.app.Application;
 
 public class App extends Application {
 
-    private static boolean isVisible;
+    private static boolean visible;
 
-    public static boolean isIsVisible() {
-        return isVisible;
+    public static boolean isVisible() {
+        return visible;
     }
 
     public static void resume(){
-        isVisible = true;
+        visible = true;
     }
 
     public static void pause(){
-        isVisible = false;
+        visible = false;
     }
 }

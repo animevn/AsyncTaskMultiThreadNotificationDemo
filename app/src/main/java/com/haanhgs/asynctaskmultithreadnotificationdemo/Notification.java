@@ -60,7 +60,8 @@ public class Notification {
     }
 
     public void createNotification(){
-        if (!App.isIsVisible() && manager != null){
+        createChannel();
+        if (!App.isVisible() && manager != null){
             manager.notify(id, createBuilder().build());
         }
     }
