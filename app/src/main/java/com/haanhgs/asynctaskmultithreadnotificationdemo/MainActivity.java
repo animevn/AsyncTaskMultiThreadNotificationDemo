@@ -24,10 +24,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        App.resume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        App.pause();
     }
 }
