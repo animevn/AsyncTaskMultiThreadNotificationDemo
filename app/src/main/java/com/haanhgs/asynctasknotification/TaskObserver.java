@@ -1,4 +1,4 @@
-package com.haanhgs.asynctaskmultithreadnotificationdemo;
+package com.haanhgs.asynctasknotification;
 
 public interface TaskObserver {
     void onPreTask();

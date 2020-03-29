@@ -1,4 +1,4 @@
-package com.haanhgs.asynctaskmultithreadnotificationdemo;
+package com.haanhgs.asynctasknotification;
 
 import android.os.AsyncTask;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.haanhgs.asynctaskmultithreadnotificationdemo;
+package com.haanhgs.asynctasknotification;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
