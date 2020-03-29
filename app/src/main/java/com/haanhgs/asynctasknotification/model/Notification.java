@@ -1,4 +1,4 @@
-package com.haanhgs.asynctasknotification;
+package com.haanhgs.asynctasknotification.model;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import com.haanhgs.asynctasknotification.R;
+import com.haanhgs.asynctasknotification.view.MainActivity;
 import androidx.core.app.NotificationCompat;
 
 public class Notification {
